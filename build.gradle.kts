@@ -1,7 +1,9 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.6.21"
+    id("java")
+    id("jacoco")
+    id("org.jetbrains.kotlin.jvm") version("1.5.20")
 }
 
 group = "ru.netology"
@@ -12,12 +14,10 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib")
+    testImplementation("junit:junit:4.13")
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
