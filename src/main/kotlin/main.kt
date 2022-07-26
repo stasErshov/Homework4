@@ -26,7 +26,7 @@ fun mastercardMaestro(previousSum: Int, transferSum: Int): String {
         ((previousSum + transferSum) > maxPerMonth) -> "Вы превысили лимит переводов за месяц. Он составляет 600_000 рублей"
         (previousSum >= maxFeeFree) || ((previousSum + transferSum) > maxFeeFree) || transferSum > maxFeeFree -> (feeCalculated + additionalFee).toString() + " копеек"
         else -> "0 копеек"
-
+    }
     return fee
 }
 
